@@ -30,7 +30,7 @@ module.exports = mixin(
                 options.data = options.data.call(context);
             }
 
-            var dialog = this._dialogs[name] || (this._dialogs[name] = this._factories[name]());
+            var dialog = this._dialogs[name] || (this._dialogs[name] = new this._factories[name]());
             if (dialog.update) {
                 dialog.update(options.data);
             }
